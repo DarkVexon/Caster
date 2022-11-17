@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
-import code.cards.AbstractEasyCard;
+import code.cards.AbstractCasterCard;
 import code.cards.cardvars.SecondDamage;
 import code.cards.cardvars.SecondMagicNumber;
 import code.relics.AbstractEasyRelic;
@@ -32,13 +32,13 @@ public class ModFile implements
         EditKeywordsSubscriber,
         EditCharactersSubscriber {
 
-    public static final String modID = "todomod"; //TODO: Change this.
+    public static final String modID = "caster";
 
     public static String makeID(String idText) {
         return modID + ":" + idText;
     }
 
-    public static Color characterColor = new Color(MathUtils.random(), MathUtils.random(), MathUtils.random(), 1); // This should be changed eventually
+    public static Color characterColor = new Color(MathUtils.random(), MathUtils.random(), MathUtils.random(), 1);
 
     public static final String SHOULDER1 = modID + "Resources/images/char/mainChar/shoulder.png";
     public static final String SHOULDER2 = modID + "Resources/images/char/mainChar/shoulder2.png";
@@ -71,7 +71,7 @@ public class ModFile implements
     public ModFile() {
         BaseMod.subscribe(this);
 
-        BaseMod.addColor(CharacterFile.Enums.TODO_COLOR, characterColor, characterColor, characterColor,
+        BaseMod.addColor(CharacterFile.Enums.CASTER_SQUOORP, characterColor, characterColor, characterColor,
                 characterColor, characterColor, characterColor, characterColor,
                 ATTACK_S_ART, SKILL_S_ART, POWER_S_ART, CARD_ENERGY_S,
                 ATTACK_L_ART, SKILL_L_ART, POWER_L_ART,
@@ -104,8 +104,8 @@ public class ModFile implements
 
     @Override
     public void receiveEditCharacters() {
-        BaseMod.addCharacter(new CharacterFile(CharacterFile.characterStrings.NAMES[1], CharacterFile.Enums.THE_TODO),
-                CHARSELECT_BUTTON, CHARSELECT_PORTRAIT, CharacterFile.Enums.THE_TODO);
+        BaseMod.addCharacter(new CharacterFile(CharacterFile.characterStrings.NAMES[1], CharacterFile.Enums.THE_CASTER),
+                CHARSELECT_BUTTON, CHARSELECT_PORTRAIT, CharacterFile.Enums.THE_CASTER);
     }
 
     @Override
@@ -129,7 +129,7 @@ public class ModFile implements
         BaseMod.addDynamicVariable(new SecondMagicNumber());
         BaseMod.addDynamicVariable(new SecondDamage());
         new AutoAdd(modID)
-                .packageFilter(AbstractEasyCard.class)
+                .packageFilter(AbstractCasterCard.class)
                 .setDefaultSeen(true)
                 .cards();
     }

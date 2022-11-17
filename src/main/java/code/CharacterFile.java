@@ -24,12 +24,12 @@ import code.relics.TodoItem;
 
 import java.util.ArrayList;
 
-import static code.CharacterFile.Enums.TODO_COLOR;
+import static code.CharacterFile.Enums.CASTER_SQUOORP;
 import static code.ModFile.*;
 
 public class CharacterFile extends CustomPlayer {
 
-    static final String ID = makeID("ModdedCharacter");
+    static final String ID = makeID("TheCaster");
     static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString(ID);
     static final String[] NAMES = characterStrings.NAMES;
     static final String[] TEXT = characterStrings.TEXT;
@@ -106,7 +106,7 @@ public class CharacterFile extends CustomPlayer {
 
     @Override
     public AbstractCard.CardColor getCardColor() {
-        return TODO_COLOR;
+        return CASTER_SQUOORP;
     }
 
     @Override
@@ -169,12 +169,11 @@ public class CharacterFile extends CustomPlayer {
     }
 
     public static class Enums {
-        //TODO: Change these.
         @SpireEnum
-        public static AbstractPlayer.PlayerClass THE_TODO;
-        @SpireEnum(name = "TODO_COLOR")
-        public static AbstractCard.CardColor TODO_COLOR;
-        @SpireEnum(name = "TODO_COLOR")
+        public static AbstractPlayer.PlayerClass THE_CASTER;
+        @SpireEnum(name = "CASTER_SQUOORP")
+        public static AbstractCard.CardColor CASTER_SQUOORP;
+        @SpireEnum(name = "CASTER_SQUOORP")
         @SuppressWarnings("unused")
         public static CardLibrary.LibraryType LIBRARY_COLOR;
     }

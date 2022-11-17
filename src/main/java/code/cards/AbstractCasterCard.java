@@ -23,7 +23,7 @@ import static code.ModFile.modID;
 import static code.util.Wiz.atb;
 import static code.util.Wiz.att;
 
-public abstract class AbstractEasyCard extends CustomCard {
+public abstract class AbstractCasterCard extends CustomCard {
 
     protected final CardStrings cardStrings;
 
@@ -39,11 +39,11 @@ public abstract class AbstractEasyCard extends CustomCard {
 
     private boolean needsArtRefresh = false;
 
-    public AbstractEasyCard(final String cardID, final int cost, final CardType type, final CardRarity rarity, final CardTarget target) {
-        this(cardID, cost, type, rarity, target, CharacterFile.Enums.TODO_COLOR);
+    public AbstractCasterCard(final String cardID, final int cost, final CardType type, final CardRarity rarity, final CardTarget target) {
+        this(cardID, cost, type, rarity, target, CharacterFile.Enums.CASTER_SQUOORP);
     }
 
-    public AbstractEasyCard(final String cardID, final int cost, final CardType type, final CardRarity rarity, final CardTarget target, final CardColor color) {
+    public AbstractCasterCard(final String cardID, final int cost, final CardType type, final CardRarity rarity, final CardTarget target, final CardColor color) {
         super(cardID, "", getCardTextureString(cardID.replace(modID + ":", ""), type),
                 cost, "", type, color, rarity, target);
         cardStrings = CardCrawlGame.languagePack.getCardStrings(this.cardID);

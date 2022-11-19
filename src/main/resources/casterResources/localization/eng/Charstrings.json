@@ -1,13 +1,13 @@
 {
-  "${ModID}:ModdedCharacter": {
+  "${ModID}:TheCaster": {
     "NAMES": [
-      "The Todo",
-      "the Todo"
+      "The Caster",
+      "the Caster"
     ],
     "TEXT": [
-      "An unfinished creation, waiting for an expert to fill the canvas.",
-      "NL TODO: Change this text",
-      "Navigating an unlit street, you come across several hooded figures in the midst of some dark ritual. As you approach, they turn to you in eerie unison. The tallest among them bares fanged teeth and extends a long, pale hand towards you. NL ~\"Join~ ~us~ ~TODO:~ ~one,~ ~and~ ~feel~ ~the~ ~warmth~ ~of~ ~the~ ~Spire.\"~"
+      "An experienced weatherwoman with a mastery of mystical arts.",
+      "NL You rain down havoc...",
+      "Navigating an unlit street, you come across several hooded figures in the midst of some dark ritual. As you approach, they turn to you in eerie unison. The tallest among them bares fanged teeth and extends a long, pale hand towards you. NL ~\"Join~ ~us~ ~witch,~ ~and~ ~feel~ ~the~ ~warmth~ ~of~ ~the~ ~Spire.\"~"
     ]
   }
 }

@@ -28,12 +28,12 @@ public abstract class AbstractCasterCard extends CustomCard {
     protected final CardStrings cardStrings;
 
     public int secondMagic;
-    public int baseSecondMagic;
+    public int baseSecondMagic = -1;
     public boolean upgradedSecondMagic;
     public boolean isSecondMagicModified;
 
     public int secondDamage;
-    public int baseSecondDamage;
+    public int baseSecondDamage = -1;
     public boolean upgradedSecondDamage;
     public boolean isSecondDamageModified;
 

@@ -42,6 +42,10 @@ public class ImageHelper {
         sb.draw(tex, x, y, 0, 0, tex.getWidth() * Settings.scale, tex.getHeight() * Settings.scale, 1, 1, 0, 0, 0, tex.getWidth(), tex.getHeight(), false, false);
     }
 
+    public static void drawTextureScaledForCard(SpriteBatch sb, Texture tex, float x, float y, float cardScale, float cardAngle) {
+        sb.draw(tex, x, y, 0, 0, tex.getWidth() * Settings.scale * cardScale, tex.getHeight() * Settings.scale * cardScale, 1, 1, cardAngle, 0, 0, tex.getWidth(), tex.getHeight(), false, false);
+    }
+
     public static void tipBoxAtMousePos(String name, String description) {
         if ((float) InputHelper.mX < 1400.0F * Settings.scale) {
             TipHelper.renderGenericTip(

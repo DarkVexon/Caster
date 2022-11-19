@@ -16,7 +16,7 @@ public class Bees extends AbstractCasterCard implements OnInfestCard {
     public Bees() {
         super(ID, 2, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
         baseDamage = 1;
-        baseMagicNumber = magicNumber = 1;
+        baseMagicNumber = magicNumber = 8;
         CardModifierManager.addModifier(this, new InfestModifier());
     }
 
@@ -27,7 +27,7 @@ public class Bees extends AbstractCasterCard implements OnInfestCard {
     }
 
     public void upp() {
-        upgradeMagicNumber(1);
+        upgradeMagicNumber(2);
     }
 
     @Override
@@ -52,9 +52,8 @@ public class Bees extends AbstractCasterCard implements OnInfestCard {
     }
 
     public void applyPowers() {
-        int count = InfestModifier.getInfestCount(this);
         int realBaseDamage = this.baseDamage;
-        this.baseDamage += count;
+        this.baseDamage += InfestModifier.getInfestCount(this);
         super.applyPowers();
         this.baseDamage = realBaseDamage;
         this.isDamageModified = this.damage != this.baseDamage;

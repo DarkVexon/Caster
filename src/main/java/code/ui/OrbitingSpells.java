@@ -5,7 +5,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 
@@ -80,7 +79,7 @@ public class OrbitingSpells {
         }
 
         public void updateXPos() {
-            card.target_x = (float) (X_DIST * Math.cos(time)) + (AbstractDungeon.player.drawX);
+            card.target_x = (float) (X_DIST * Math.cos(time)) + (AbstractDungeon.player.drawX + (AbstractDungeon.player.hb.width / 3));
         }
 
         public void updateYPos() {

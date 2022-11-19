@@ -7,6 +7,7 @@ import basemod.interfaces.*;
 import code.cards.AbstractCasterCard;
 import code.cards.cardvars.SecondDamage;
 import code.cards.cardvars.SecondMagicNumber;
+import code.patches.EnchantedCardsPatch;
 import code.relics.AbstractCasterRelic;
 import code.ui.BecomeAwesomeButton;
 import code.ui.OrbitingSpells;
@@ -18,6 +19,8 @@ import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.*;
@@ -25,6 +28,8 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import java.nio.charset.StandardCharsets;
+
+import static code.util.Wiz.atb;
 
 @SuppressWarnings({"unused", "WeakerAccess"})
 @SpireInitializer
@@ -35,7 +40,7 @@ public class ModFile implements
         EditKeywordsSubscriber,
         EditCharactersSubscriber, OnStartBattleSubscriber,
         PostPlayerUpdateSubscriber, PostDungeonUpdateSubscriber,
-        StartGameSubscriber {
+        StartGameSubscriber, OnPlayerTurnStartPostDrawSubscriber, PostUpdateSubscriber {
 
     public static final String modID = "caster";
 
@@ -191,5 +196,25 @@ public class ModFile implements
     @Override
     public void receiveStartGame() {
         becomeAwesomeButton = new BecomeAwesomeButton();
+    }
+
+    @Override
+    public void receiveOnPlayerTurnStartPostDraw() {
+        if (AbstractDungeon.player.chosenClass.equals(CharacterFile.Enums.THE_CASTER)) {
+            atb(new AbstractGameAction() {
+                @Override
+                public void update() {
+                    isDone = true;
+                    AbstractCard tar = AbstractDungeon.player.hand.getRandomCard(AbstractDungeon.cardRandomRng);
+                    EnchantedCardsPatch.enchant(tar);
+                    tar.superFlash();
+                }
+            });
+        }
+    }
+
+    @Override
+    public void receivePostUpdate() {
+        EnchantedCardsPatch.time += Gdx.graphics.getDeltaTime();
     }
 }

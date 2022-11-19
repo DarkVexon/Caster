@@ -39,10 +39,7 @@ public class InfestModifier extends AbstractCardModifier {
                     isDone = true;
                     card.superFlash(Color.GREEN.cpy());
                     AbstractDungeon.player.hand.moveToDeck(card, true);
-                    infestCounter += 1;
-                    if (card instanceof OnInfestCard) {
-                        ((OnInfestCard) card).onInfest(infestCounter);
-                    }
+                    addInfestCounter(card);
                 }
             });
         }
@@ -74,7 +71,7 @@ public class InfestModifier extends AbstractCardModifier {
     }
 
     public static int getInfestCount(AbstractCard card) {
-        if (CardModifierManager.hasModifier(card, MOD_ID)) {
+        if (hasInfest(card)) {
             ArrayList<AbstractCardModifier> mods = CardModifierManager.getModifiers(card, MOD_ID);
             AbstractCardModifier mod = mods.get(0);
             if (mod instanceof InfestModifier) {
@@ -82,6 +79,23 @@ public class InfestModifier extends AbstractCardModifier {
             }
         }
         return 0;
+    }
+
+    private void addInfestCounter(AbstractCard card) {
+        infestCounter += 1;
+        if (card instanceof OnInfestCard) {
+            ((OnInfestCard) card).onInfest(infestCounter);
+        }
+    }
+
+    public static void incrementInfestCount(AbstractCard card) {
+        if (hasInfest(card)) {
+            ArrayList<AbstractCardModifier> mods = CardModifierManager.getModifiers(card, MOD_ID);
+            AbstractCardModifier mod = mods.get(0);
+            if (mod instanceof InfestModifier) {
+                ((InfestModifier) mod).addInfestCounter(card);
+            }
+        }
     }
 
     public static boolean hasInfest(AbstractCard card) {

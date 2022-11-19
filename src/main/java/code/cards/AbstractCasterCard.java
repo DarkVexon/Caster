@@ -1,9 +1,9 @@
 package code.cards;
 
 import basemod.abstracts.CustomCard;
+import code.CharacterFile;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
-import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -12,10 +12,8 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import code.CharacterFile;
 
 import static code.ModFile.makeImagePath;
 import static code.ModFile.modID;
@@ -141,15 +139,14 @@ public abstract class AbstractCasterCard extends CustomCard {
         upgradedSecondDamage = true;
     }
 
-    protected void uDesc() {
-        rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-        initializeDescription();
-    }
-
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
             upp();
+            if (cardStrings.UPGRADE_DESCRIPTION != null) {
+                rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+                initializeDescription();
+            }
         }
     }
 

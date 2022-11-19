@@ -22,7 +22,7 @@ public class Chromatics extends AbstractCasterCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
         atb(new DiscardAction(p, p, BaseMod.MAX_HAND_SIZE, true));
-        atb(new ConjureAction(2));
+        atb(new ConjureAction(magicNumber));
     }
 
     public void upp() {

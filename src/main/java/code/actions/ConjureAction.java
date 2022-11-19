@@ -29,7 +29,7 @@ public class ConjureAction extends AbstractGameAction {
                 }
             });
         } else {
-            if (amount == 1) {
+            if (amount == 1 || OrbitingSpells.spellCards.size() == 1) {
                 AbstractCard tar = Wiz.getRandomItem(OrbitingSpells.spellCards, AbstractDungeon.cardRandomRng).card.makeStatEquivalentCopy();
                 addToTop(new MakeTempCardInHandAction(tar));
                 addToTop(new RemoveSpellCardAction(tar));
@@ -37,8 +37,8 @@ public class ConjureAction extends AbstractGameAction {
                 ArrayList<OrbitingSpells.CardRenderInfo> possCards = new ArrayList<>();
                 possCards.addAll(OrbitingSpells.spellCards);
                 ArrayList<OrbitingSpells.CardRenderInfo> availableCards = new ArrayList<>();
-                for (int i = 0; i < amount && i < possCards.size(); i++) {
-                    availableCards.add(possCards.remove(AbstractDungeon.cardRandomRng.random(possCards.size())));
+                while (availableCards.size() < amount && !possCards.isEmpty()) {
+                    availableCards.add(possCards.remove(AbstractDungeon.cardRandomRng.random(possCards.size() - 1)));
                 }
                 ArrayList<AbstractCard> actualChoices = new ArrayList<>();
                 availableCards.forEach(q -> actualChoices.add(q.card.makeStatEquivalentCopy()));

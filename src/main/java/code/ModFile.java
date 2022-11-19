@@ -201,6 +201,8 @@ public class ModFile implements
         becomeAwesomeButton = new BecomeAwesomeButton();
     }
 
+    private static final Color ENCHANT_MAGENTA = new Color(0.8F, 0.0F, 0.5F, 0F);
+
     @Override
     public void receiveOnPlayerTurnStartPostDraw() {
         if (AbstractDungeon.player.chosenClass.equals(CharacterFile.Enums.THE_CASTER)) {
@@ -208,10 +210,9 @@ public class ModFile implements
                 @Override
                 public void update() {
                     isDone = true;
-                    EnchantedCardsPatch.resetEnchantedCards();
                     AbstractCard tar = AbstractDungeon.player.hand.getRandomCard(AbstractDungeon.cardRandomRng);
                     EnchantedCardsPatch.enchant(tar);
-                    tar.superFlash();
+                    tar.superFlash(ENCHANT_MAGENTA.cpy());
                 }
             });
         }

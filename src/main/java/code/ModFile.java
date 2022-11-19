@@ -208,6 +208,7 @@ public class ModFile implements
                 @Override
                 public void update() {
                     isDone = true;
+                    EnchantedCardsPatch.resetEnchantedCards();
                     AbstractCard tar = AbstractDungeon.player.hand.getRandomCard(AbstractDungeon.cardRandomRng);
                     EnchantedCardsPatch.enchant(tar);
                     tar.superFlash();

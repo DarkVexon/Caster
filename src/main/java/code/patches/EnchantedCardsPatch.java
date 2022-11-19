@@ -8,7 +8,11 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireField;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
+import java.util.ArrayList;
+
 public class EnchantedCardsPatch {
+    private static ArrayList<AbstractCard> enchantedCards = new ArrayList<>();
+
     @SpirePatch(
             clz = AbstractCard.class,
             method = SpirePatch.CLASS
@@ -23,6 +27,12 @@ public class EnchantedCardsPatch {
 
     public static void enchant(AbstractCard card) {
         EnchantedField.enchanted.set(card, true);
+        enchantedCards.add(card);
+    }
+
+    public static void resetEnchantedCards() {
+        enchantedCards.forEach(q -> EnchantedField.enchanted.set(q, false));
+        enchantedCards.clear();
     }
 
     @SpirePatch(
@@ -63,6 +73,7 @@ public class EnchantedCardsPatch {
             method = "renderTitle")
     public static class RainbowEnchantedCards {
         private static ShaderProgram oldShader;
+
         public static void Prefix(AbstractCard __instance, SpriteBatch sb) {
             if (isEnchanted(__instance)) {
                 if (shader == null) {

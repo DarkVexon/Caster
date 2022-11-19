@@ -47,12 +47,14 @@ public class InfestModifier extends AbstractCardModifier {
 
     @Override
     public void onRender(AbstractCard card, SpriteBatch sb) {
-        Color color = Color.WHITE.cpy();
-        color.a = card.transparency;
-        sb.setColor(color);
-        sb.draw(infestImage, card.current_x + infestImage.offsetX - (float) infestImage.originalWidth / 2.0F, card.current_y + infestImage.offsetY - (float) infestImage.originalHeight / 2.0F, (float) infestImage.originalWidth / 2.0F - infestImage.offsetX, (float) infestImage.originalHeight / 2.0F - infestImage.offsetY, (float) infestImage.packedWidth, (float) infestImage.packedHeight, card.drawScale * Settings.scale, card.drawScale * Settings.scale, card.angle);
-        FontHelper.cardEnergyFont_L.getData().setScale(card.drawScale);
-        FontHelper.renderRotatedText(sb, FontHelper.cardEnergyFont_L, Integer.toString(infestCounter), card.current_x, card.current_y, -133.0F * card.drawScale * Settings.scale, 115.0F * card.drawScale * Settings.scale, card.angle, false, Color.WHITE.cpy());
+        if (Wiz.isInCombat()) {
+            Color color = Color.WHITE.cpy();
+            color.a = card.transparency;
+            sb.setColor(color);
+            sb.draw(infestImage, card.current_x + infestImage.offsetX - (float) infestImage.originalWidth / 2.0F, card.current_y + infestImage.offsetY - (float) infestImage.originalHeight / 2.0F, (float) infestImage.originalWidth / 2.0F - infestImage.offsetX, (float) infestImage.originalHeight / 2.0F - infestImage.offsetY, (float) infestImage.packedWidth, (float) infestImage.packedHeight, card.drawScale * Settings.scale, card.drawScale * Settings.scale, card.angle);
+            FontHelper.cardEnergyFont_L.getData().setScale(card.drawScale);
+            FontHelper.renderRotatedText(sb, FontHelper.cardEnergyFont_L, Integer.toString(infestCounter), card.current_x, card.current_y, -133.0F * card.drawScale * Settings.scale, 115.0F * card.drawScale * Settings.scale, card.angle, false, Color.WHITE.cpy());
+        }
     }
 
     @Override

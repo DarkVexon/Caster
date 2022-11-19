@@ -1,5 +1,6 @@
 package code.util;
 
+import code.powers.AwesomePower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.*;
@@ -189,5 +190,9 @@ public class Wiz {
             return found.amount;
         }
         return 0;
+    }
+
+    public static int awesomeAmt() {
+        return pwrAmt(AbstractDungeon.player, AwesomePower.ID);
     }
 }

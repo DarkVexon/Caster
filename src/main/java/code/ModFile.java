@@ -9,7 +9,9 @@ import code.cards.cardvars.SecondDamage;
 import code.cards.cardvars.SecondMagicNumber;
 import code.patches.EnchantedCardsPatch;
 import code.relics.AbstractCasterRelic;
+import code.ui.AwesomeIcon;
 import code.ui.BecomeAwesomeButton;
+import code.ui.InfestIcon;
 import code.ui.OrbitingSpells;
 import code.util.SparkleHandler;
 import code.util.Wiz;
@@ -18,6 +20,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
+import com.evacipated.cardcrawl.mod.stslib.icons.CustomIconHelper;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
@@ -139,8 +142,12 @@ public class ModFile implements
 
     @Override
     public void receiveEditCards() {
+        CustomIconHelper.addCustomIcon(InfestIcon.get());
+        CustomIconHelper.addCustomIcon(AwesomeIcon.get());
+
         BaseMod.addDynamicVariable(new SecondMagicNumber());
         BaseMod.addDynamicVariable(new SecondDamage());
+
         new AutoAdd(modID)
                 .packageFilter(AbstractCasterCard.class)
                 .setDefaultSeen(true)

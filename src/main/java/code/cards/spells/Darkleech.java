@@ -26,6 +26,5 @@ public class Darkleech extends AbstractSpellCard {
     public void upp() {
         upgradeMagicNumber(2);
         upgradeSecondMagic(1);
-        uDesc();
     }
 }

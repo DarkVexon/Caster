@@ -34,7 +34,7 @@
   },
   "${ModID}:Bees": {
     "NAME": "BEES!!!",
-    "DESCRIPTION": "${ModID}:Infest. NL Deal !D! damage !M! times. NL Deals 1 additional damage for each [bug] ."
+    "DESCRIPTION": "${ModID}:Infest. NL Deal !D! damage !M! times. NL Deals 1 additional damage for each [bugIcon] ."
   },
   "${ModID}:ParasolTwirl": {
     "NAME": "Parasol Twirl",
@@ -43,7 +43,7 @@
   },
   "${ModID}:ScarabShield": {
     "NAME": "Scarab Shield",
-    "DESCRIPTION": "${ModID}:Infest. NL Gain !B! Block. NL Grants !M! more Block for each [bug] ."
+    "DESCRIPTION": "${ModID}:Infest. NL Gain !B! Block. NL Grants !M! more Block for each [bugIcon] ."
   },
   "${ModID}:Chromatics": {
     "NAME": "Chromatics",
@@ -55,11 +55,15 @@
   },
   "${ModID}:Swarmblade": {
     "NAME": "Swarmblade",
-    "DESCRIPTION": "${ModID}:Infest. NL Deal !D! damage. NL Draw 1 card for each [bug] ."
+    "DESCRIPTION": "${ModID}:Infest. NL Deal !D! damage. NL Draw 1 card for each [bugIcon] ."
   },
   "${ModID}:LordOfTheFlies": {
     "NAME": "Lord of the Flies",
-    "DESCRIPTION": "When your cards ${ModID}:Infest, put an additional [bug] on them.",
-    "UPGRADE_DESCRIPTION": "Innate. NL When your cards ${ModID}:Infest, put an additional [bug] on them."
+    "DESCRIPTION": "When your cards ${ModID}:Infest, put an additional [bugIcon] on them.",
+    "UPGRADE_DESCRIPTION": "Innate. NL When your cards ${ModID}:Infest, put an additional [bugIcon] on them."
+  },
+  "${ModID}:Flourish": {
+    "NAME": "Flourish",
+    "DESCRIPTION": "[awesomeIcon] 2+: Draw !M! cards."
   }
 }

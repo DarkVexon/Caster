@@ -1,0 +1,53 @@
+package code.actions;
+
+import code.ui.OrbitingSpells;
+import code.util.Wiz;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsCenteredAction;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+
+import java.util.ArrayList;
+
+public class ConjureAction extends AbstractGameAction {
+    public ConjureAction(int amount) {
+        this.amount = amount;
+    }
+
+    @Override
+    public void update() {
+        isDone = true;
+        if (OrbitingSpells.spellCards.isEmpty()) {
+            addToTop(new GainEnergyAction(1));
+            addToTop(new AbstractGameAction() {
+                @Override
+                public void update() {
+                    isDone = true;
+                    OrbitingSpells.refreshSpells();
+                }
+            });
+        } else {
+            if (amount == 1) {
+                AbstractCard tar = Wiz.getRandomItem(OrbitingSpells.spellCards, AbstractDungeon.cardRandomRng).card.makeStatEquivalentCopy();
+                addToTop(new MakeTempCardInHandAction(tar));
+                addToTop(new RemoveSpellCardAction(tar));
+            } else {
+                ArrayList<OrbitingSpells.CardRenderInfo> possCards = new ArrayList<>();
+                possCards.addAll(OrbitingSpells.spellCards);
+                ArrayList<OrbitingSpells.CardRenderInfo> availableCards = new ArrayList<>();
+                for (int i = 0; i < amount && i < possCards.size(); i++) {
+                    availableCards.add(possCards.remove(AbstractDungeon.cardRandomRng.random(possCards.size())));
+                }
+                ArrayList<AbstractCard> actualChoices = new ArrayList<>();
+                availableCards.forEach(q -> actualChoices.add(q.card.makeStatEquivalentCopy()));
+                addToTop(new SelectCardsCenteredAction(actualChoices, "Choose a Spell to add into your hand.", (cards) -> {
+                    AbstractCard q = cards.get(0);
+                    addToTop(new MakeTempCardInHandAction(q));
+                    addToTop(new RemoveSpellCardAction(q));
+                })); // TODO: Loc
+            }
+        }
+    }
+}

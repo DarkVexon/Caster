@@ -2,6 +2,7 @@ package code.cards.spells;
 
 import code.cards.AbstractCasterCard;
 import com.megacrit.cardcrawl.actions.common.ExhaustAction;
+import com.megacrit.cardcrawl.cards.status.Burn;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
@@ -10,7 +11,7 @@ import static code.ModFile.makeID;
 import static code.util.Wiz.*;
 
 public class BurningStudy extends AbstractSpellCard {
-    public final static String ID = makeID("BurningStudy");
+    public final static String ID = makeID(BurningStudy.class.getSimpleName());
     // intellij stuff skill, self, , , , , 2, 1
 
     public BurningStudy() {

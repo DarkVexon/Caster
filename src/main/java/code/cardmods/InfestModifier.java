@@ -83,4 +83,8 @@ public class InfestModifier extends AbstractCardModifier {
         }
         return 0;
     }
+
+    public static boolean hasInfest(AbstractCard card) {
+        return CardModifierManager.hasModifier(card, MOD_ID);
+    }
 }

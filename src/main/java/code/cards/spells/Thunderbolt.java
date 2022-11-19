@@ -9,7 +9,7 @@ import static code.ModFile.makeID;
 import static code.util.Wiz.*;
 
 public class Thunderbolt extends AbstractSpellCard {
-    public final static String ID = makeID("Thunderbolt");
+    public final static String ID = makeID(Thunderbolt.class.getSimpleName());
     // intellij stuff attack, enemy, 13, 6, , , , 
 
     public Thunderbolt() {

@@ -11,7 +11,7 @@ import static code.ModFile.makeID;
 import static code.util.Wiz.*;
 
 public class Brightblind extends AbstractSpellCard {
-    public final static String ID = makeID("Brightblind");
+    public final static String ID = makeID(Brightblind.class.getSimpleName());
     // intellij stuff attack, enemy, 5, 1, , , 1, 1
 
     public Brightblind() {

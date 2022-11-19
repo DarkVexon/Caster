@@ -3,6 +3,11 @@ package code;
 import basemod.abstracts.CustomEnergyOrb;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpriterAnimation;
+import code.cards.Chromatics;
+import code.cards.Defend;
+import code.cards.ParasolTwirl;
+import code.cards.Strike;
+import code.relics.TodoItem;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
@@ -18,9 +23,6 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
-import code.cards.Defend;
-import code.cards.Strike;
-import code.relics.TodoItem;
 
 import java.util.ArrayList;
 
@@ -65,6 +67,8 @@ public class CharacterFile extends CustomPlayer {
         for (int i = 0; i < 4; i++) {
             retVal.add(Defend.ID);
         }
+        retVal.add(Chromatics.ID);
+        retVal.add(ParasolTwirl.ID);
         return retVal;
     }
 

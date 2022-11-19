@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static code.ModFile.makeID;
 
 public class Defend extends AbstractCasterCard {
-    public final static String ID = makeID("Defend");
+    public final static String ID = makeID(Defend.class.getSimpleName());
     // intellij stuff skill, self, basic, , ,  5, 3, , 
 
     public Defend() {

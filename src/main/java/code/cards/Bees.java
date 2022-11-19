@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static code.ModFile.makeID;
 
 public class Bees extends AbstractCasterCard implements OnInfestCard {
-    public final static String ID = makeID("Bees");
+    public final static String ID = makeID(Bees.class.getSimpleName());
     // intellij stuff attack, enemy, rare, 1, , , , 1, 1
 
     public Bees() {

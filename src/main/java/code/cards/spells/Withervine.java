@@ -12,7 +12,7 @@ import static code.util.Wiz.applyToEnemy;
 import static code.util.Wiz.atb;
 
 public class Withervine extends AbstractSpellCard {
-    public final static String ID = makeID("Withervine");
+    public final static String ID = makeID(Withervine.class.getSimpleName());
     // intellij stuff skill, enemy, , , , , 1, 1
 
     public Withervine() {

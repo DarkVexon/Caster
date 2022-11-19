@@ -11,12 +11,14 @@ import code.patches.EnchantedCardsPatch;
 import code.relics.AbstractCasterRelic;
 import code.ui.BecomeAwesomeButton;
 import code.ui.OrbitingSpells;
+import code.util.SparkleHandler;
 import code.util.Wiz;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
+import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -40,7 +42,8 @@ public class ModFile implements
         EditKeywordsSubscriber,
         EditCharactersSubscriber, OnStartBattleSubscriber,
         PostPlayerUpdateSubscriber, PostDungeonUpdateSubscriber,
-        StartGameSubscriber, OnPlayerTurnStartPostDrawSubscriber, PostUpdateSubscriber {
+        StartGameSubscriber, OnPlayerTurnStartPostDrawSubscriber, PostUpdateSubscriber,
+        PostInitializeSubscriber {
 
     public static final String modID = "caster";
 
@@ -216,5 +219,12 @@ public class ModFile implements
     @Override
     public void receivePostUpdate() {
         EnchantedCardsPatch.time += Gdx.graphics.getDeltaTime();
+    }
+
+    @Override
+    public void receivePostInitialize() {
+        if (Loader.isModLoaded("rare-cards-sparkle")) {
+            SparkleHandler.init();
+        }
     }
 }

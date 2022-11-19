@@ -9,7 +9,7 @@ import static code.ModFile.makeID;
 import static code.util.Wiz.atb;
 
 public class Darkleech extends AbstractSpellCard {
-    public final static String ID = makeID("Darkleech");
+    public final static String ID = makeID(Darkleech.class.getSimpleName());
     // intellij stuff skill, all_enemy, , , , , 7, 2
 
     public Darkleech() {

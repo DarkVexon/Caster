@@ -34,6 +34,19 @@
   },
   "${ModID}:Bees": {
     "NAME": "BEES!!!",
-    "DESCRIPTION": "${ModID}:Infest. NL Deal !D! damage !M! times. NL Deals 1 additional damage for each infestation counter."
+    "DESCRIPTION": "${ModID}:Infest. NL Deal !D! damage !M! times. NL Deals 1 additional damage for each [bug] ."
+  },
+  "${ModID}:ParasolTwirl": {
+    "NAME": "Parasol Twirl",
+    "DESCRIPTION": "Next turn, NL gain [E].",
+    "UPGRADE_DESCRIPTION": "Next turn, NL gain [E] [E]."
+  },
+  "${ModID}:ScarabShield": {
+    "NAME": "Scarab Shield",
+    "DESCRIPTION": "${ModID}:Infest. NL Gain !B! Block. NL Grants !M! more Block for each [bug] ."
+  },
+  "${ModID}:Chromatics": {
+    "NAME": "Chromatics",
+    "DESCRIPTION": "Gain !B! Block. NL Discard your hand, then ${ModID}:Conjure !M!."
   }
 }

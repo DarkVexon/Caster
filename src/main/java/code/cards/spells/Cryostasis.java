@@ -9,7 +9,7 @@ import static code.ModFile.makeID;
 import static code.util.Wiz.*;
 
 public class Cryostasis extends AbstractSpellCard {
-    public final static String ID = makeID("Cryostasis");
+    public final static String ID = makeID(Cryostasis.class.getSimpleName());
     // intellij stuff skill, self, , , 7, 1, 1, 1
 
     public Cryostasis() {

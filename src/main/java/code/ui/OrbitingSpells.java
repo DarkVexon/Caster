@@ -6,15 +6,15 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 
 import java.util.ArrayList;
 
 public class OrbitingSpells {
-    private static final float X_START = 500F;
-    private static final float Y_START = Settings.HEIGHT / 2F;
+
     private static final float X_DIST = 300F;
-    private static final float Y_DIST = 100F;
+    private static final float Y_DIST = 80F;
     private static final float DIST_BETWEEN_CARDS = MathUtils.PI2;
     private static final float TIME_MULT = 0.5F;
     private static final float SPELL_SIZE = 0.5F;
@@ -80,11 +80,11 @@ public class OrbitingSpells {
         }
 
         public void updateXPos() {
-            card.target_x = (float) (X_DIST * Math.cos(time)) + X_START;
+            card.target_x = (float) (X_DIST * Math.cos(time)) + (AbstractDungeon.player.drawX);
         }
 
         public void updateYPos() {
-            card.target_y = (float) (Y_DIST * Math.sin(time)) + Y_START;
+            card.target_y = (float) (Y_DIST * Math.sin(time)) + (AbstractDungeon.player.drawY + (AbstractDungeon.player.hb.height / 2));
             renderBehind = (time / MathUtils.PI) % 2 < 1;
         }
     }

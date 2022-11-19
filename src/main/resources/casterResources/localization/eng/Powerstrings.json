@@ -1,10 +1,9 @@
 {
-  "${ModID}:ExampleTwoAmountPower": {
-    "NAME": "Example 2",
+  "${ModID}:AwesomePower": {
+    "NAME": "Awesome",
     "DESCRIPTIONS": [
-      "At the start of your turn, gain #b",
-      " #yStrength and #b",
-      " #yDexterity."
+      "You're #yAwesome! #b",
+      " #yAwesome, to be specific."
     ]
   }
 }

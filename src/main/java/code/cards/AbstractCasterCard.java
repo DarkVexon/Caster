@@ -16,7 +16,6 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import code.CharacterFile;
-import code.util.CardArtRoller;
 
 import static code.ModFile.makeImagePath;
 import static code.ModFile.modID;
@@ -37,8 +36,6 @@ public abstract class AbstractCasterCard extends CustomCard {
     public boolean upgradedSecondDamage;
     public boolean isSecondDamageModified;
 
-    private boolean needsArtRefresh = false;
-
     public AbstractCasterCard(final String cardID, final int cost, final CardType type, final CardRarity rarity, final CardTarget target) {
         this(cardID, cost, type, rarity, target, CharacterFile.Enums.CASTER_SQUOORP);
     }
@@ -51,22 +48,6 @@ public abstract class AbstractCasterCard extends CustomCard {
         name = originalName = cardStrings.NAME;
         initializeTitle();
         initializeDescription();
-
-        if (textureImg.contains("ui/missing.png")) {
-            if (CardLibrary.getAllCards() != null && !CardLibrary.getAllCards().isEmpty()) {
-                CardArtRoller.computeCard(this);
-            } else
-                needsArtRefresh = true;
-        }
-    }
-
-    @Override
-    protected Texture getPortraitImage() {
-        if (textureImg.contains("ui/missing.png")) {
-            return CardArtRoller.getPortraitTexture(this);
-        } else {
-            return super.getPortraitImage();
-        }
     }
 
     public static String getCardTextureString(final String cardName, final AbstractCard.CardType cardType) {
@@ -174,13 +155,6 @@ public abstract class AbstractCasterCard extends CustomCard {
 
     public abstract void upp();
 
-    public void update() {
-        super.update();
-        if (needsArtRefresh) {
-            CardArtRoller.computeCard(this);
-        }
-    }
-
     // These shortcuts are specifically for cards. All other shortcuts that aren't specifically for cards can go in Wiz.
     protected void dmg(AbstractMonster m, AbstractGameAction.AttackEffect fx) {
         atb(new DamageAction(m, new DamageInfo(AbstractDungeon.player, damage, damageTypeForTurn), fx));
@@ -210,9 +184,6 @@ public abstract class AbstractCasterCard extends CustomCard {
         return null;
     }
 
-    public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return null;
-    }
 
     protected void upMagic(int x) {
         upgradeMagicNumber(x);

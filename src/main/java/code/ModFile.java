@@ -7,15 +7,19 @@ import basemod.interfaces.*;
 import code.cards.AbstractCasterCard;
 import code.cards.cardvars.SecondDamage;
 import code.cards.cardvars.SecondMagicNumber;
-import code.relics.AbstractEasyRelic;
+import code.relics.AbstractCasterRelic;
+import code.ui.BecomeAwesomeButton;
 import code.ui.OrbitingSpells;
+import code.util.Wiz;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -30,7 +34,8 @@ public class ModFile implements
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         EditCharactersSubscriber, OnStartBattleSubscriber,
-        PostPlayerUpdateSubscriber {
+        PostPlayerUpdateSubscriber, PostDungeonUpdateSubscriber,
+        StartGameSubscriber {
 
     public static final String modID = "caster";
 
@@ -111,8 +116,8 @@ public class ModFile implements
     @Override
     public void receiveEditRelics() {
         new AutoAdd(modID)
-                .packageFilter(AbstractEasyRelic.class)
-                .any(AbstractEasyRelic.class, (info, relic) -> {
+                .packageFilter(AbstractCasterRelic.class)
+                .any(AbstractCasterRelic.class, (info, relic) -> {
                     if (relic.color == null) {
                         BaseMod.addRelic(relic, RelicType.SHARED);
                     } else {
@@ -133,7 +138,6 @@ public class ModFile implements
                 .setDefaultSeen(true)
                 .cards();
     }
-
 
     @Override
     public void receiveEditStrings() {
@@ -169,5 +173,23 @@ public class ModFile implements
     @Override
     public void receivePostPlayerUpdate() {
         OrbitingSpells.update();
+    }
+
+    private static BecomeAwesomeButton becomeAwesomeButton;
+
+    public static void renderCombatUiElements(SpriteBatch sb) {
+        if (Wiz.isInCombat() && AbstractDungeon.player.chosenClass.equals(CharacterFile.Enums.THE_CASTER)) {
+            becomeAwesomeButton.render(sb);
+        }
+    }
+
+    @Override
+    public void receivePostDungeonUpdate() {
+        becomeAwesomeButton.update();
+    }
+
+    @Override
+    public void receiveStartGame() {
+        becomeAwesomeButton = new BecomeAwesomeButton();
     }
 }

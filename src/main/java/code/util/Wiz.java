@@ -17,7 +17,6 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
-import code.actions.TimedVFXAction;
 
 import java.util.ArrayList;
 import java.util.function.Consumer;
@@ -126,10 +125,6 @@ public class Wiz {
 
     public static void vfx(AbstractGameEffect gameEffect, float duration) {
         atb(new VFXAction(gameEffect, duration));
-    }
-
-    public static void tfx(AbstractGameEffect gameEffect) {
-        atb(new TimedVFXAction(gameEffect));
     }
 
     public static void makeInHand(AbstractCard c, int i) {

@@ -94,7 +94,7 @@
   },
   "${ModID}:TimeCompression": {
     "NAME": "Time Compression",
-    "DESCRIPTION": "End your turn and take an additional one, in which you gain 3 less [E] and Block is not removed."
+    "DESCRIPTION": "End your turn and take an additional one, in which you gain no [E] and Block is not removed."
   },
   "${ModID}:InResponse": {
     "NAME": "In Response...",

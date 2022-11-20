@@ -35,11 +35,17 @@
       " less [E] next turn."
     ]
   },
-  "${ModID}:SorcererSupreme": {
+  "${ModID}:SorcererSupremePower": {
     "NAME": "Sorcerer Supreme",
     "DESCRIPTIONS": [
       "#ySpells cost #b0. Whenever you play a #ySpell, deal #b",
       " damage to a random enemy."
+    ]
+  },
+  "${ModID}:NoEnergyNextTurnPower": {
+    "NAME": "No Energy Next Turn",
+    "DESCRIPTIONS": [
+      "Next turn, you get no [E]."
     ]
   }
 }

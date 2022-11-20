@@ -74,5 +74,26 @@
   "${ModID}:BadassMechaSuit": {
     "NAME": "Badass Mecha Suit",
     "DESCRIPTION": "Gain !M! *Plated *Armor. NL [awesomeIcon] 2+: And !${ModID}:m2! Thorns. NL [awesomeIcon] 4+: And !${ModID}:m3! Strength."
+  },
+  "${ModID}:PiercingParasol": {
+    "NAME": "Piercing Parasol",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL ${ModID}:Conjure !M!."
+  },
+  "${ModID}:PaidInAdvance": {
+    "NAME": "Paid in Advance",
+    "DESCRIPTION": "Gain !B! Block. NL Next turn, lose [E]."
+  },
+  "${ModID}:SorcererSupreme": {
+    "NAME": "Sorcerer Supreme",
+    "DESCRIPTION": "Spells cost 0. NL Whenever you play a Spell, deal !M! damage to a random enemy."
+  },
+  "${ModID}:RainbowMastery": {
+    "NAME": "Rainbow Mastery",
+    "DESCRIPTION": "${ModID}:Conjure 6.",
+    "UPGRADE_DESCRIPTION": "Retain. NL ${ModID}:Conjure 6."
+  },
+  "${ModID}:TimeCompression": {
+    "NAME": "Time Compression",
+    "DESCRIPTION": "End your turn and take an additional one, in which you gain 3 less [E] and Block is not removed."
   }
 }

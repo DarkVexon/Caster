@@ -27,7 +27,8 @@ public class AwesomeIcon extends AbstractCustomIcon {
         return singleton;
     }
 
-    public List<TooltipInfo> getCustomTooltips() {
-        return Arrays.asList(new TooltipInfo(BaseMod.getKeywordTitle(makeID("awesome")), BaseMod.getKeywordDescription(makeID("awesome"))));
+    @Override
+    public List<String> keywordLinks() {
+        return Arrays.asList(makeID("awesome"));
     }
 }

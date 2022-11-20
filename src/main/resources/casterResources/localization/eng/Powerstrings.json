@@ -5,5 +5,41 @@
       "You're #yAwesome! #b",
       " #yAwesome, to be specific."
     ]
+  },
+  "${ModID}:LordOfTheFliesPower": {
+    "NAME": "Lord of the Flies",
+    "DESCRIPTIONS": [
+      "Whenever a card #yInfests, put ",
+      " on it."
+    ]
+  },
+  "${ModID}:BrellaBouncePower": {
+    "NAME": "Brella Bounce",
+    "DESCRIPTIONS": [
+      "Enemies can't create #yStatus cards this turn.",
+      "Enemies can't create #yStatus cards for the next #b",
+      " turns."
+    ]
+  },
+  "${ModID}:InResponsePower": {
+    "NAME": "In Response...",
+    "DESCRIPTIONS": [
+      "Whenever you play a #ySpell, gain #b",
+      " #yBlock."
+    ]
+  },
+  "${ModID}:DeEnergizedPower": {
+    "NAME": "De-Energized",
+    "DESCRIPTIONS": [
+      "Gain #b",
+      " less [E] next turn."
+    ]
+  },
+  "${ModID}:SorcererSupreme": {
+    "NAME": "Sorcerer Supreme",
+    "DESCRIPTIONS": [
+      "#ySpells cost #b0. Whenever you play a #ySpell, deal #b",
+      " damage to a random enemy."
+    ]
   }
 }

@@ -14,7 +14,7 @@ public class ScarabShield extends AbstractCasterCard {
     public ScarabShield() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         baseBlock = 6;
-        baseMagicNumber = magicNumber = 2;
+        baseMagicNumber = magicNumber = 3;
         CardModifierManager.addModifier(this, new InfestModifier());
     }
 

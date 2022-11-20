@@ -26,6 +26,12 @@ public class LordOfTheFliesPower extends AbstractCasterPower implements OnInfest
 
     @Override
     public void updateDescription() {
-        description = powerStrings.DESCRIPTIONS[0] + amount + powerStrings.DESCRIPTIONS[1];
+        StringBuilder sb = new StringBuilder();
+        sb.append(powerStrings.DESCRIPTIONS[0]);
+        for (int i = 0; i < amount; i++) {
+            sb.append("[bugIcon]");
+        }
+        sb.append(powerStrings.DESCRIPTIONS[1]);
+        description = sb.toString();
     }
 }

@@ -3,7 +3,8 @@
     "PROPER_NAME": "Infest",
     "NAMES": [
       "infest",
-      "infests"
+      "infests",
+      "[bugIcon]"
     ],
     "DESCRIPTION": "At the end of your turn, if this is in your hand, shuffle it into your draw pile and put an infestation counter on it."
   },
@@ -12,6 +13,14 @@
     "NAMES": [
       "conjure"
     ],
-    "DESCRIPTION": "Choose 1 of X #ySpells to add into your hand. If you have none, gain [E] and refresh your #ySpells."
+    "DESCRIPTION": "Choose #b1 of X #ySpells to add into your hand. If you have none, draw #b1 card and refresh your #ySpells."
+  },
+  {
+    "PROPER_NAME": "Awesome",
+    "NAMES": [
+      "awesome",
+      "[awesomeIcon]"
+    ],
+    "DESCRIPTION": "At any time, you may spend all your [E] and become that #yAwesome."
   }
 ]

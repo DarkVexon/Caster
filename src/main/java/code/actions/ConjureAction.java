@@ -4,7 +4,7 @@ import code.ui.OrbitingSpells;
 import code.util.Wiz;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsCenteredAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -20,14 +20,8 @@ public class ConjureAction extends AbstractGameAction {
     public void update() {
         isDone = true;
         if (OrbitingSpells.spellCards.isEmpty()) {
-            addToTop(new GainEnergyAction(1));
-            addToTop(new AbstractGameAction() {
-                @Override
-                public void update() {
-                    isDone = true;
-                    OrbitingSpells.refreshSpells();
-                }
-            });
+            addToTop(new DrawCardAction(1));
+            addToTop(new RefreshSpellsAction());
         } else {
             if (amount == 1 || OrbitingSpells.spellCards.size() == 1) {
                 AbstractCard tar = Wiz.getRandomItem(OrbitingSpells.spellCards, AbstractDungeon.cardRandomRng).card.makeStatEquivalentCopy();

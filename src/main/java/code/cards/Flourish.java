@@ -28,11 +28,6 @@ public class Flourish extends AbstractCasterCard {
     }
 
     @Override
-    public List<TooltipInfo> getCustomTooltips() {
-        return Arrays.asList(new TooltipInfo("#yAwesome", "At any time, you may spend all your [E] to become that #yAwesome."));
-    }
-
-    @Override
     public void triggerOnGlowCheck() {
         glowColor = awesomeAmt() >= 2 ? GOLD_BORDER_GLOW_COLOR : BLUE_BORDER_GLOW_COLOR;
     }

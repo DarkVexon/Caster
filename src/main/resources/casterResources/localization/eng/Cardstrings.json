@@ -65,5 +65,10 @@
   "${ModID}:Flourish": {
     "NAME": "Flourish",
     "DESCRIPTION": "[awesomeIcon] 2+: Draw !M! cards."
+  },
+  "${ModID}:StylinStrike": {
+    "NAME": "Stylin' Strike",
+    "DESCRIPTION": "Deal !D! damage. NL Draw !M! card. NL [awesomeIcon] 1+: Upgrade it. NL [awesomeIcon] 3+: It costs 0 this turn.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Draw !M! cards. NL [awesomeIcon] 1+: Upgrade them. NL [awesomeIcon] 3+: They cost 0 this turn."
   }
 }

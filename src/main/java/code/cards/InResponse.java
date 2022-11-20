@@ -1,12 +1,13 @@
 package code.cards;
 
 import code.actions.ConjureAction;
-import code.cards.AbstractCasterCard;
+import code.powers.InResponsePower;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static code.ModFile.makeID;
-import static code.util.Wiz.*;
+import static code.util.Wiz.applyToSelf;
+import static code.util.Wiz.atb;
 
 public class InResponse extends AbstractCasterCard {
     public final static String ID = makeID(InResponse.class.getSimpleName());
@@ -19,7 +20,7 @@ public class InResponse extends AbstractCasterCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         atb(new ConjureAction(magicNumber));
-        applyToSelf();
+        applyToSelf(new InResponsePower(magicNumber));
     }
 
     public void upp() {

@@ -27,6 +27,6 @@ public class DeEnergizedPower extends AbstractCasterPower {
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        this.description = powerStrings.DESCRIPTIONS[0] + amount + powerStrings.DESCRIPTIONS[1]; //TODO: Forgot the 'powerStrings.' part and it broke. Fix in ProTemplate.
     }
 }

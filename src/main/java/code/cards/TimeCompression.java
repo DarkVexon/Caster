@@ -1,9 +1,10 @@
 package code.cards;
 
-import code.cards.AbstractCasterCard;
 import code.powers.DeEnergizedPower;
+import code.powers.SpecialBlurPower;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.watcher.PressEndTurnButtonAction;
 import com.megacrit.cardcrawl.actions.watcher.SkipEnemiesTurnAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -15,7 +16,8 @@ import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.TimeWarpTurnEndEffect;
 
 import static code.ModFile.makeID;
-import static code.util.Wiz.*;
+import static code.util.Wiz.applyToSelf;
+import static code.util.Wiz.atb;
 
 public class TimeCompression extends AbstractCasterCard {
     public final static String ID = makeID(TimeCompression.class.getSimpleName());
@@ -27,7 +29,7 @@ public class TimeCompression extends AbstractCasterCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         applyToSelf(new DeEnergizedPower(3));
-        applyToSelf(new BlurPower(p, 1));
+        applyToSelf(new SpecialBlurPower(p, 1));
 
         atb(new AbstractGameAction() {
             @Override

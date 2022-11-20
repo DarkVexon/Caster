@@ -95,5 +95,13 @@
   "${ModID}:TimeCompression": {
     "NAME": "Time Compression",
     "DESCRIPTION": "End your turn and take an additional one, in which you gain 3 less [E] and Block is not removed."
+  },
+  "${ModID}:InResponse": {
+    "NAME": "In Response...",
+    "DESCRIPTION": "${ModID}:Conjure !M!. NL Whenever you play a Spell, gain !M! Block."
+  },
+  "${ModID}:CoolMagnet": {
+    "NAME": "Cool Magnet!",
+    "DESCRIPTION": "Apply !M! Weak and Vulnerable. NL Put a card from your discard pile on top of your draw pile."
   }
 }

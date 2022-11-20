@@ -3,8 +3,7 @@
     "PROPER_NAME": "Infest",
     "NAMES": [
       "infest",
-      "infests",
-      "[bugIcon]"
+      "infests"
     ],
     "DESCRIPTION": "At the end of your turn, if this is in your hand, shuffle it into your draw pile and put an infestation counter on it."
   },
@@ -18,8 +17,7 @@
   {
     "PROPER_NAME": "Awesome",
     "NAMES": [
-      "awesome",
-      "[awesomeIcon]"
+      "awesome"
     ],
     "DESCRIPTION": "At any time, you may spend all your [E] and become that #yAwesome."
   }

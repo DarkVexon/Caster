@@ -7,6 +7,7 @@ import basemod.interfaces.*;
 import code.cards.AbstractCasterCard;
 import code.cards.cardvars.SecondDamage;
 import code.cards.cardvars.SecondMagicNumber;
+import code.cards.cardvars.ThirdMagicNumber;
 import code.patches.EnchantedCardsPatch;
 import code.relics.AbstractCasterRelic;
 import code.ui.AwesomeIcon;
@@ -146,6 +147,7 @@ public class ModFile implements
         CustomIconHelper.addCustomIcon(AwesomeIcon.get());
 
         BaseMod.addDynamicVariable(new SecondMagicNumber());
+        BaseMod.addDynamicVariable(new ThirdMagicNumber());
         BaseMod.addDynamicVariable(new SecondDamage());
 
         new AutoAdd(modID)

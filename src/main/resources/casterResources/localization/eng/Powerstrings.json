@@ -9,8 +9,9 @@
   "${ModID}:LordOfTheFliesPower": {
     "NAME": "Lord of the Flies",
     "DESCRIPTIONS": [
-      "Whenever a card #yInfests, put ",
-      " on it."
+      "Whenever a card #yInfests, add #b",
+      " #yBug into your hand.",
+      " #yBugs into your hand."
     ]
   },
   "${ModID}:BrellaBouncePower": {
@@ -45,7 +46,14 @@
   "${ModID}:NoEnergyNextTurnPower": {
     "NAME": "No Energy Next Turn",
     "DESCRIPTIONS": [
-      "Next turn, you get no [E]."
+      "Gain no [E] next turn."
+    ]
+  },
+  "${ModID}:BlightbladePower": {
+    "NAME": "Blightblade",
+    "DESCRIPTIONS": [
+      "#yBugs deal #b",
+      " more damage this turn."
     ]
   }
 }

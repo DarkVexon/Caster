@@ -1,6 +1,6 @@
 package code.ui;
 
-import code.cards.spells.*;
+import code.cards.other.spells.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;

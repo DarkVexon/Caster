@@ -12,9 +12,8 @@ public class ScarabShield extends AbstractCasterCard {
     // intellij stuff skill, self, uncommon, , , 6, 2, 2, 1
 
     public ScarabShield() {
-        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        baseBlock = 6;
-        baseMagicNumber = magicNumber = 3;
+        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
+        baseBlock = 8;
         CardModifierManager.addModifier(this, new InfestModifier());
     }
 
@@ -22,17 +21,7 @@ public class ScarabShield extends AbstractCasterCard {
         blck();
     }
 
-    @Override
-    protected void applyPowersToBlock() {
-        int realBaseBlock = this.baseBlock;
-        baseBlock += magicNumber * InfestModifier.getInfestCount(this);
-        super.applyPowersToBlock();
-        this.baseBlock = realBaseBlock;
-        this.isBlockModified = realBaseBlock != this.baseBlock;
-    }
-
     public void upp() {
         upgradeBlock(2);
-        upgradeMagicNumber(1);
     }
 }

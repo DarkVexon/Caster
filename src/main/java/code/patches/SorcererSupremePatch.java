@@ -1,6 +1,6 @@
 package code.patches;
 
-import code.cards.spells.AbstractSpellCard;
+import code.cards.other.spells.AbstractSpellCard;
 import code.powers.SorcererSupremePower;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;

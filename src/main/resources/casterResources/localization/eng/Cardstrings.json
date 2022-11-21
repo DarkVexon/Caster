@@ -34,7 +34,7 @@
   },
   "${ModID}:Bees": {
     "NAME": "BEES!!!",
-    "DESCRIPTION": "${ModID}:Infest. NL Deal !D! damage !M! times. NL Deals 1 additional damage for each [bugIcon] ."
+    "DESCRIPTION": "${ModID}:Infest. NL Deal !D! damage !M! times. NL Deals 1 additional damage for each *Bug played this turn."
   },
   "${ModID}:ParasolTwirl": {
     "NAME": "Parasol Twirl",
@@ -43,7 +43,7 @@
   },
   "${ModID}:ScarabShield": {
     "NAME": "Scarab Shield",
-    "DESCRIPTION": "${ModID}:Infest. NL Gain !B! Block. NL Grants !M! more Block for each [bugIcon] ."
+    "DESCRIPTION": "${ModID}:Infest. NL Gain !B! Block."
   },
   "${ModID}:Chromatics": {
     "NAME": "Chromatics",
@@ -53,14 +53,10 @@
     "NAME": "Brella Bounce",
     "DESCRIPTION": "Retain. NL Gain !B! Block. NL Enemies can't create Status cards this turn."
   },
-  "${ModID}:Swarmblade": {
-    "NAME": "Swarmblade",
-    "DESCRIPTION": "${ModID}:Infest. NL Deal !D! damage. NL Draw 1 card for each [bugIcon] ."
-  },
   "${ModID}:LordOfTheFlies": {
     "NAME": "Lord of the Flies",
-    "DESCRIPTION": "When your cards ${ModID}:Infest, put an additional [bugIcon] on them.",
-    "UPGRADE_DESCRIPTION": "Innate. NL When your cards ${ModID}:Infest, put an additional [bugIcon] on them."
+    "DESCRIPTION": "When your cards ${ModID}:Infest, add an additional *Bug into your hand.",
+    "UPGRADE_DESCRIPTION": "Innate. NL When your cards ${ModID}:Infest, add an additional *Bug into your hand."
   },
   "${ModID}:Flourish": {
     "NAME": "Flourish",
@@ -81,7 +77,7 @@
   },
   "${ModID}:PaidInAdvance": {
     "NAME": "Paid in Advance",
-    "DESCRIPTION": "Gain !B! Block. NL Next turn, lose [E]."
+    "DESCRIPTION": "Deal !D! damage. NL Next turn, lose [E]."
   },
   "${ModID}:SorcererSupreme": {
     "NAME": "Sorcerer Supreme",
@@ -94,7 +90,7 @@
   },
   "${ModID}:TimeCompression": {
     "NAME": "Time Compression",
-    "DESCRIPTION": "End your turn and take an additional one, in which you gain no [E] and Block is not removed."
+    "DESCRIPTION": "End your turn and take an additional one, NL in which you gain no [E] and Block is not removed."
   },
   "${ModID}:InResponse": {
     "NAME": "In Response...",
@@ -103,5 +99,22 @@
   "${ModID}:CoolMagnet": {
     "NAME": "Cool Magnet!",
     "DESCRIPTION": "Apply !M! Weak and Vulnerable. NL Put a card from your discard pile on top of your draw pile."
+  },
+  "${ModID}:FinalForm": {
+    "NAME": "This Isn't Even My...",
+    "DESCRIPTION": "Gain !M! Intangible. NL [awesomeIcon] 1: Each turn, gain [E]. NL [awesomeIcon] 3: Each turn, draw 2 cards. NL [awesomeIcon] 5: Each turn, foes lose 15 HP. NL [awesomeIcon] 10: Cards are played twice."
+  },
+  "${ModID}:Bug": {
+    "NAME": "Bug",
+    "DESCRIPTION": "Retain. NL Deal !D! damage. NL Exhaust."
+  },
+  "${ModID}:SavedByTheBell": {
+    "NAME": "Saved by the Bell",
+    "DESCRIPTION": "Gain !B! Block. NL Block is not removed at the start of your next turn. NL Put 2 *Curse *of *the *Bells on top of your draw pile.",
+    "UPGRADE_DESCRIPTION": "Ethereal. NL Gain !B! Block. NL Block is not removed at the start of your next turn. NL Put 2 *Curse *of *the *Bells on top of your draw pile."
+  },
+  "${ModID}:Arachnophobia": {
+    "NAME": "Arachnophobia",
+    "DESCRIPTION": "${ModID}:Infest. NL *Bugs apply !M! Poison."
   }
 }

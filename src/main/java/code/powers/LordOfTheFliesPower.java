@@ -1,11 +1,13 @@
 package code.powers;
 
 import code.cardmods.InfestModifier;
+import code.cards.other.Bug;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 
 import static code.ModFile.makeID;
 
@@ -21,17 +23,11 @@ public class LordOfTheFliesPower extends AbstractCasterPower implements OnInfest
     @Override
     public void onInfest(AbstractCard card) {
         for (int i = 0; i < amount; i++)
-            InfestModifier.incrementInfestCount(card);
+            AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(new Bug()));
     }
 
     @Override
     public void updateDescription() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(powerStrings.DESCRIPTIONS[0]);
-        for (int i = 0; i < amount; i++) {
-            sb.append("[bugIcon]");
-        }
-        sb.append(powerStrings.DESCRIPTIONS[1]);
-        description = sb.toString();
+        description = amount == 1 ? powerStrings.DESCRIPTIONS[0] + amount + powerStrings.DESCRIPTIONS[1] : powerStrings.DESCRIPTIONS[0] + amount + powerStrings.DESCRIPTIONS[2];
     }
 }

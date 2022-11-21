@@ -1,8 +1,6 @@
-package code.cards.spells;
+package code.cards.other.spells;
 
-import code.cards.AbstractCasterCard;
 import com.megacrit.cardcrawl.actions.common.ExhaustAction;
-import com.megacrit.cardcrawl.cards.status.Burn;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;

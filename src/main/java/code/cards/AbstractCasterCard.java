@@ -15,7 +15,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import static code.ModFile.makeImagePath;
 import static code.ModFile.modID;
 import static code.util.Wiz.atb;
 import static code.util.Wiz.att;
@@ -54,22 +53,10 @@ public abstract class AbstractCasterCard extends CustomCard {
     }
 
     public static String getCardTextureString(final String cardName, final AbstractCard.CardType cardType) {
-        String textureString;
-
-        switch (cardType) {
-            case ATTACK:
-            case POWER:
-            case SKILL:
-                textureString = makeImagePath("cards/" + cardName + ".png");
-                break;
-            default:
-                textureString = makeImagePath("ui/missing.png");
-                break;
-        }
-
+        String textureString = "casterResources/images/cards/" + cardName + ".png";
         FileHandle h = Gdx.files.internal(textureString);
         if (!h.exists()) {
-            textureString = makeImagePath("ui/missing.png");
+            textureString = "casterResources/images/ui/missing.png";
         }
         return textureString;
     }
@@ -192,26 +179,5 @@ public abstract class AbstractCasterCard extends CustomCard {
 
     protected void blck() {
         atb(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, block));
-    }
-
-    public String cardArtCopy() {
-        return null;
-    }
-
-
-    protected void upMagic(int x) {
-        upgradeMagicNumber(x);
-    }
-
-    protected void upSecondMagic(int x) {
-        upgradeSecondMagic(x);
-    }
-
-    protected void upThirdMagic(int x) {
-        upgradeThirdMagic(x);
-    }
-
-    protected void upSecondDamage(int x) {
-        upgradeSecondDamage(x);
     }
 }

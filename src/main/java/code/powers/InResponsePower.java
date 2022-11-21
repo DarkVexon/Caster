@@ -1,6 +1,6 @@
 package code.powers;
 
-import code.cards.spells.AbstractSpellCard;
+import code.cards.other.spells.AbstractSpellCard;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;

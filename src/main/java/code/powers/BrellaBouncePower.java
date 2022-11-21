@@ -24,6 +24,6 @@ public class BrellaBouncePower extends AbstractCasterPower {
 
     @Override
     public void updateDescription() {
-        description = amount == 1 ? powerStrings.DESCRIPTIONS[0] : powerStrings.DESCRIPTIONS[1] + amount + powerStrings.DESCRIPTIONS[2];
+        description = amount == 1 ? powerStrings.DESCRIPTIONS[0] + amount + powerStrings.DESCRIPTIONS[1] : powerStrings.DESCRIPTIONS[0] + amount + powerStrings.DESCRIPTIONS[2];
     }
 }

@@ -2,6 +2,7 @@ package code;
 
 import basemod.AutoAdd;
 import basemod.BaseMod;
+import basemod.ModPanel;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import code.cards.AbstractCasterCard;
@@ -12,14 +13,14 @@ import code.patches.EnchantedCardsPatch;
 import code.relics.AbstractCasterRelic;
 import code.ui.AwesomeIcon;
 import code.ui.BecomeAwesomeButton;
-import code.ui.InfestIcon;
 import code.ui.OrbitingSpells;
 import code.util.SparkleHandler;
+import code.util.TexLoader;
 import code.util.Wiz;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.mod.stslib.icons.CustomIconHelper;
 import com.evacipated.cardcrawl.modthespire.Loader;
@@ -35,6 +36,7 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import java.nio.charset.StandardCharsets;
 
+import static code.CharacterFile.*;
 import static code.util.Wiz.atb;
 
 @SuppressWarnings({"unused", "WeakerAccess"})
@@ -55,22 +57,7 @@ public class ModFile implements
         return modID + ":" + idText;
     }
 
-    public static Color characterColor = new Color(MathUtils.random(), MathUtils.random(), MathUtils.random(), 1);
-
-    public static final String SHOULDER1 = modID + "Resources/images/char/mainChar/shoulder.png";
-    public static final String SHOULDER2 = modID + "Resources/images/char/mainChar/shoulder2.png";
-    public static final String CORPSE = modID + "Resources/images/char/mainChar/corpse.png";
-    private static final String ATTACK_S_ART = modID + "Resources/images/512/attack.png";
-    private static final String SKILL_S_ART = modID + "Resources/images/512/skill.png";
-    private static final String POWER_S_ART = modID + "Resources/images/512/power.png";
-    private static final String CARD_ENERGY_S = modID + "Resources/images/512/energy.png";
-    private static final String TEXT_ENERGY = modID + "Resources/images/512/text_energy.png";
-    private static final String ATTACK_L_ART = modID + "Resources/images/1024/attack.png";
-    private static final String SKILL_L_ART = modID + "Resources/images/1024/skill.png";
-    private static final String POWER_L_ART = modID + "Resources/images/1024/power.png";
-    private static final String CARD_ENERGY_L = modID + "Resources/images/1024/energy.png";
-    private static final String CHARSELECT_BUTTON = modID + "Resources/images/charSelect/charButton.png";
-    private static final String CHARSELECT_PORTRAIT = modID + "Resources/images/charSelect/charBG.png";
+    private static final Texture modBadgeTexture = TexLoader.getTexture(modID + "Resources/images/ui/modBadge.png");
 
     public static Settings.GameLanguage[] SupportedLanguages = {
             Settings.GameLanguage.ENG,
@@ -93,26 +80,6 @@ public class ModFile implements
                 ATTACK_S_ART, SKILL_S_ART, POWER_S_ART, CARD_ENERGY_S,
                 ATTACK_L_ART, SKILL_L_ART, POWER_L_ART,
                 CARD_ENERGY_L, TEXT_ENERGY);
-    }
-
-    public static String makePath(String resourcePath) {
-        return modID + "Resources/" + resourcePath;
-    }
-
-    public static String makeImagePath(String resourcePath) {
-        return modID + "Resources/images/" + resourcePath;
-    }
-
-    public static String makeRelicPath(String resourcePath) {
-        return modID + "Resources/images/relics/" + resourcePath;
-    }
-
-    public static String makePowerPath(String resourcePath) {
-        return modID + "Resources/images/powers/" + resourcePath;
-    }
-
-    public static String makeCardPath(String resourcePath) {
-        return modID + "Resources/images/cards/" + resourcePath;
     }
 
     public static void initialize() {
@@ -234,6 +201,12 @@ public class ModFile implements
 
     @Override
     public void receivePostInitialize() {
+        // Create the Mod Menu
+        ModPanel settingsPanel = new ModPanel();
+
+        // Load the Mod Badge
+        BaseMod.registerModBadge(modBadgeTexture, "", "", "", settingsPanel);
+
         if (Loader.isModLoaded("rare-cards-sparkle")) {
             SparkleHandler.init();
         }

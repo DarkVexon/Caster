@@ -1,6 +1,6 @@
 package code.util;
 
-import code.cards.spells.*;
+import code.cards.other.spells.*;
 import code.patches.EnchantedCardsPatch;
 import com.badlogic.gdx.graphics.Color;
 import com.blanktheevil.rarecardssparkle.RareCardsSparkle;

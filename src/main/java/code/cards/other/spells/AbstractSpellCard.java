@@ -1,4 +1,4 @@
-package code.cards.spells;
+package code.cards.other.spells;
 
 import code.cards.AbstractCasterCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;

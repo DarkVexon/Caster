@@ -1,4 +1,4 @@
-package code.cards.spells;
+package code.cards.other.spells;
 
 import com.megacrit.cardcrawl.actions.common.RemoveAllBlockAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;

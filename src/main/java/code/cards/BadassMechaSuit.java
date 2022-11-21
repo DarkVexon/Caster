@@ -34,7 +34,7 @@ public class BadassMechaSuit extends AbstractCasterCard {
 
     public void upp() {
         upgradeMagicNumber(2);
-        upSecondMagic(3);
-        upThirdMagic(1);
+        upgradeSecondMagic(3);
+        upgradeThirdMagic(1);
     }
 }

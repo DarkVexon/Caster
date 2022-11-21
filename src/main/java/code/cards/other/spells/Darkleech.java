@@ -1,4 +1,4 @@
-package code.cards.spells;
+package code.cards.other.spells;
 
 import code.actions.AllEnemyLoseHPAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;

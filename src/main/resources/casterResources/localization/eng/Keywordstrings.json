@@ -5,7 +5,7 @@
       "infest",
       "infests"
     ],
-    "DESCRIPTION": "At the end of your turn, if this is in your hand, shuffle it into your draw pile and put an infestation counter on it."
+    "DESCRIPTION": "At the end of your turn, if this is in your hand, shuffle it into your draw pile and add a #yBug into your hand."
   },
   {
     "PROPER_NAME": "Conjure",
@@ -19,6 +19,6 @@
     "NAMES": [
       "awesome"
     ],
-    "DESCRIPTION": "At any time, you may spend all your [E] and become that #yAwesome."
+    "DESCRIPTION": "At any time, you may spend all your [E] and become that much more #yAwesome."
   }
 ]

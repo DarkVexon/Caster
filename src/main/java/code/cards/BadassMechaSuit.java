@@ -3,6 +3,7 @@ package code.cards;
 import code.cards.AbstractCasterCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.ThornsPower;
@@ -17,24 +18,24 @@ public class BadassMechaSuit extends AbstractCasterCard {
     public BadassMechaSuit() {
         super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
         baseMagicNumber = magicNumber = 4;
-        baseSecondMagic = secondMagic = 6;
-        baseThirdMagic = thirdMagic = 3;
+        baseSecondMagic = secondMagic = 2;
+        baseThirdMagic = thirdMagic = 6;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         applyToSelf(new PlatedArmorPower(p, magicNumber));
         int awe = awesomeAmt();
         if (awe >= 2) {
-            applyToSelf(new ThornsPower(p, secondMagic));
+            applyToSelf(new ArtifactPower(p, secondMagic));
         }
         if (awe >= 4) {
-            applyToSelf(new StrengthPower(p, thirdMagic));
+            applyToSelf(new ThornsPower(p, thirdMagic));
         }
     }
 
     public void upp() {
         upgradeMagicNumber(2);
-        upgradeSecondMagic(3);
-        upgradeThirdMagic(1);
+        upgradeSecondMagic(1);
+        upgradeThirdMagic(3);
     }
 }

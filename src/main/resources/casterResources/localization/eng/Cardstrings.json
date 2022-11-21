@@ -69,7 +69,7 @@
   },
   "${ModID}:BadassMechaSuit": {
     "NAME": "Badass Mecha Suit",
-    "DESCRIPTION": "Gain !M! *Plated *Armor. NL [awesomeIcon] 2+: And !${ModID}:m2! Thorns. NL [awesomeIcon] 4+: And !${ModID}:m3! Strength."
+    "DESCRIPTION": "Gain !M! *Plated *Armor. NL [awesomeIcon] 2+: And !${ModID}:m2! Artifact. NL [awesomeIcon] 4+: And !${ModID}:m3! Thorns."
   },
   "${ModID}:PiercingParasol": {
     "NAME": "Piercing Parasol",
@@ -116,5 +116,10 @@
   "${ModID}:Arachnophobia": {
     "NAME": "Arachnophobia",
     "DESCRIPTION": "${ModID}:Infest. NL *Bugs apply !M! Poison."
+  },
+  "${ModID}:Conjuration101": {
+    "NAME": "Conjuration 101",
+    "DESCRIPTION": "At the start of your turn, ${ModID}:Conjure 1.",
+    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, ${ModID}:Conjure 1."
   }
 }

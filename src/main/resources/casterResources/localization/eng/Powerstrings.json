@@ -55,5 +55,12 @@
       "#yBugs deal #b",
       " more damage this turn."
     ]
+  },
+  "${ModID}:Conjuration101Power": {
+    "NAME": "Conjuration 10",
+    "DESCRIPTIONS": [
+      "At the start of your turn, #yConjure #b",
+      "."
+    ]
   }
 }

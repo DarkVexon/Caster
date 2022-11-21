@@ -15,7 +15,7 @@
     "DESCRIPTION": "Choose #b1 of X Spells to add into your hand. If you have none, draw #b1 card and refresh your Spells."
   },
   {
-    "PROPER_NAME": "Awesome",
+    "PROPER_NAME": "[awesomeIcon] Awesome",
     "NAMES": [
       "awesome"
     ],

@@ -1,6 +1,7 @@
 package code.cards;
 
 import code.cards.AbstractCasterCard;
+import code.powers.BlightbladePower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -20,7 +21,7 @@ public class Blightblade extends AbstractCasterCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL);
-        applyToSelf();
+        applyToSelf(new BlightbladePower(magicNumber));
     }
 
     public void upp() {

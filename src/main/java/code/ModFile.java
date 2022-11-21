@@ -21,6 +21,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.mod.stslib.icons.CustomIconHelper;
 import com.evacipated.cardcrawl.modthespire.Loader;
@@ -53,11 +54,26 @@ public class ModFile implements
 
     public static final String modID = "caster";
 
+    public static final String SHOULDER1 = modID + "Resources/images/char/mainChar/shoulder.png";
+    public static final String SHOULDER2 = modID + "Resources/images/char/mainChar/shoulder2.png";
+    public static final String CORPSE = modID + "Resources/images/char/mainChar/corpse.png";
+    public static final String ATTACK_S_ART = modID + "Resources/images/512/attack.png";
+    public static final String SKILL_S_ART = modID + "Resources/images/512/skill.png";
+    public static final String POWER_S_ART = modID + "Resources/images/512/power.png";
+    public static final String CARD_ENERGY_S = modID + "Resources/images/512/energy.png";
+    public static final String TEXT_ENERGY = modID + "Resources/images/512/text_energy.png";
+    public static final String ATTACK_L_ART = modID + "Resources/images/1024/attack.png";
+    public static final String SKILL_L_ART = modID + "Resources/images/1024/skill.png";
+    public static final String POWER_L_ART = modID + "Resources/images/1024/power.png";
+    public static final String CARD_ENERGY_L = modID + "Resources/images/1024/energy.png";
+    public static final String CHARSELECT_BUTTON = modID + "Resources/images/charSelect/charButton.png";
+    public static final String CHARSELECT_PORTRAIT = modID + "Resources/images/charSelect/charBG.png";
+
+    public static Color characterColor = new Color(MathUtils.random(), MathUtils.random(), MathUtils.random(), 1);
+
     public static String makeID(String idText) {
         return modID + ":" + idText;
     }
-
-    private static final Texture modBadgeTexture = TexLoader.getTexture(modID + "Resources/images/ui/modBadge.png");
 
     public static Settings.GameLanguage[] SupportedLanguages = {
             Settings.GameLanguage.ENG,
@@ -110,7 +126,6 @@ public class ModFile implements
 
     @Override
     public void receiveEditCards() {
-        CustomIconHelper.addCustomIcon(InfestIcon.get());
         CustomIconHelper.addCustomIcon(AwesomeIcon.get());
 
         BaseMod.addDynamicVariable(new SecondMagicNumber());
@@ -205,6 +220,7 @@ public class ModFile implements
         ModPanel settingsPanel = new ModPanel();
 
         // Load the Mod Badge
+        Texture modBadgeTexture = TexLoader.getTexture(modID + "Resources/images/ui/modBadge.png");
         BaseMod.registerModBadge(modBadgeTexture, "", "", "", settingsPanel);
 
         if (Loader.isModLoaded("rare-cards-sparkle")) {

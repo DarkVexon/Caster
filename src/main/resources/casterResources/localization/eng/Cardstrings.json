@@ -64,8 +64,7 @@
   },
   "${ModID}:StylinStrike": {
     "NAME": "Stylin' Strike",
-    "DESCRIPTION": "Deal !D! damage. NL Draw !M! card. NL [awesomeIcon] 1+: Upgrade it. NL [awesomeIcon] 3+: It costs 0 this turn.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Draw !M! cards. NL [awesomeIcon] 1+: Upgrade them. NL [awesomeIcon] 3+: They cost 0 this turn."
+    "DESCRIPTION": "Deal !D! damage. NL [awesomeIcon] 1+: to ALL enemies. NL [awesomeIcon] 3+: twice."
   },
   "${ModID}:BadassMechaSuit": {
     "NAME": "Badass Mecha Suit",
@@ -77,7 +76,7 @@
   },
   "${ModID}:PaidInAdvance": {
     "NAME": "Paid in Advance",
-    "DESCRIPTION": "Deal !D! damage. NL Next turn, lose [E]."
+    "DESCRIPTION": "Deal !D! damage. NL Put a *Void on top of your draw pile."
   },
   "${ModID}:SorcererSupreme": {
     "NAME": "Sorcerer Supreme",
@@ -110,8 +109,8 @@
   },
   "${ModID}:SavedByTheBell": {
     "NAME": "Saved by the Bell",
-    "DESCRIPTION": "Gain !B! Block. NL Block is not removed at the start of your next turn. NL Put 2 *Curse *of *the *Bells on top of your draw pile.",
-    "UPGRADE_DESCRIPTION": "Ethereal. NL Gain !B! Block. NL Block is not removed at the start of your next turn. NL Put 2 *Curse *of *the *Bells on top of your draw pile."
+    "DESCRIPTION": "Gain !B! Block. NL Put 2 *Curse *of *the *Bells on top of your draw pile.",
+    "UPGRADE_DESCRIPTION": "Ethereal. NL Gain !B! Block. NL Put 2 *Curse *of *the *Bells on top of your draw pile."
   },
   "${ModID}:Arachnophobia": {
     "NAME": "Arachnophobia",
@@ -127,11 +126,15 @@
     "DESCRIPTION": "Deal !D! damage. NL ${ModID}:Conjure !M!."
   },
   "${ModID}:Supernova": {
-    "NAME": "Supernova",
+    "NAME": "Super Nova",
     "DESCRIPTION": "ALL enemies lose !M! HP. NL Gain !${ModID}:m2! [awesomeIcon] ."
   },
   "${ModID}:Blightblade": {
     "NAME": "Blightblade",
-    "DESCRIPTION": "Infest. NL Deal !D! damage. NL This turn, *Bugs deal !M! more damage."
+    "DESCRIPTION": "${ModID}:Infest. NL Deal !D! damage. NL This turn, *Bugs deal !M! more damage."
+  },
+  "${ModID:Keyblade": {
+    "NAME": "Keyblade",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak. NL Deals !${ModID}:m2! more damage for each Key you have."
   }
 }

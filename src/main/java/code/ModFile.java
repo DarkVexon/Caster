@@ -69,7 +69,7 @@ public class ModFile implements
     public static final String CHARSELECT_BUTTON = modID + "Resources/images/charSelect/charButton.png";
     public static final String CHARSELECT_PORTRAIT = modID + "Resources/images/charSelect/charBG.png";
 
-    public static Color characterColor = new Color(MathUtils.random(), MathUtils.random(), MathUtils.random(), 1);
+    public static Color characterColor = new Color(0.444F, 0.888F, 0.333F, 1);
 
     public static String makeID(String idText) {
         return modID + ":" + idText;

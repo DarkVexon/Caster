@@ -21,7 +21,6 @@ public class SavedByTheBell extends AbstractCasterCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
-        applyToSelf(new BlurPower(p, 1));
         topDeck(new CurseOfTheBell(), 2);
     }
 

@@ -12,7 +12,7 @@ public class Bug extends AbstractCasterCard {
     // intellij stuff attack, enemy, special, 3, 2, , , , 
 
     public Bug() {
-        super(ID, 0, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY);
+        super(ID, 0, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY, CardColor.COLORLESS);
         baseDamage = 3;
         selfRetain = true;
     }

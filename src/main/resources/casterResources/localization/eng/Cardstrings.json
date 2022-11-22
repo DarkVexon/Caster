@@ -121,5 +121,13 @@
     "NAME": "Conjuration 101",
     "DESCRIPTION": "At the start of your turn, ${ModID}:Conjure 1.",
     "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, ${ModID}:Conjure 1."
+  },
+  "${ModID}:MagicStrike": {
+    "NAME": "Magic Strike",
+    "DESCRIPTION": "Deal !D! damage. NL ${ModID}:Conjure !M!."
+  },
+  "${ModID}:Supernova": {
+    "NAME": "Supernova",
+    "DESCRIPTION": "ALL enemies lose !M! HP. NL Gain !${ModID}:m2! [awesomeIcon] ."
   }
 }

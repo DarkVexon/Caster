@@ -55,14 +55,6 @@ public class SparkleHandler {
                 new SparkleTimer(TIMER_START, TIMER_END),
                 card -> card.cardID.equals(Thunderbolt.ID));
         RareCardsSparkle.addSparkleRule(
-                makeID("EarthSparkle"),
-                "Spell Sparkles - Earth",
-                new Color(0.0f, 1f, 0.2f, 0f),
-                ImageMaster.GLOW_SPARK_2,
-                true,
-                new SparkleTimer(TIMER_START, TIMER_END),
-                card -> card.cardID.equals(Withervine.ID));
-        RareCardsSparkle.addSparkleRule(
                 makeID("EnchantedSparkle"),
                 "Enchanted Card Sparkles",
                 new Color(0.8F, 0.0F, 0.5F, 0F),

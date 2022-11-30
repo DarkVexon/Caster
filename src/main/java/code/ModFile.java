@@ -11,6 +11,7 @@ import code.cards.cardvars.SecondMagicNumber;
 import code.cards.cardvars.ThirdMagicNumber;
 import code.patches.EnchantedCardsPatch;
 import code.relics.AbstractCasterRelic;
+import code.ui.AscensionIcon;
 import code.ui.AwesomeIcon;
 import code.ui.BecomeAwesomeButton;
 import code.ui.OrbitingSpells;
@@ -127,6 +128,7 @@ public class ModFile implements
     @Override
     public void receiveEditCards() {
         CustomIconHelper.addCustomIcon(AwesomeIcon.get());
+        CustomIconHelper.addCustomIcon(AscensionIcon.get());
 
         BaseMod.addDynamicVariable(new SecondMagicNumber());
         BaseMod.addDynamicVariable(new ThirdMagicNumber());

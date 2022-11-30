@@ -136,5 +136,14 @@
   "${ModID:Keyblade": {
     "NAME": "Keyblade",
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak. NL Deals !${ModID}:m2! more damage for each Key you have."
+  },
+  "${ModID}:MiracleWorker": {
+    "NAME": "Miracle Worker",
+    "DESCRIPTION": "Gain !B! Block. NL Put a *Miracle on top of your draw pile.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Put a *Miracle+ on top of your draw pile."
+  },
+  "${ModID}:VexingDeal2": {
+    "NAME": "Vexing Deal II",
+    "DESCRIPTION": "Gain !M! Strength. NL Gain [ascensionIcon] ."
   }
 }

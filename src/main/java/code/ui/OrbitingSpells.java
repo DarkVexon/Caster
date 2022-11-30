@@ -29,7 +29,6 @@ public class OrbitingSpells {
         spells.add(BurningStudy.ID);
         spells.add(Cryostasis.ID);
         spells.add(Thunderbolt.ID);
-        spells.add(Withervine.ID);
         spells.add(Brightblind.ID);
         spells.add(Darkleech.ID);
     }

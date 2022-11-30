@@ -20,5 +20,12 @@
       "awesome"
     ],
     "DESCRIPTION": "At any time, you may spend all your [E] and become that much more #yAwesome."
+  },
+  {
+    "PROPER_NAME": "[ascensionIcon] Ascension",
+    "NAMES": [
+      "ascension"
+    ],
+    "DESCRIPTION": "Runs get harder as you win... (Winstreaks are unaffected)"
   }
 ]

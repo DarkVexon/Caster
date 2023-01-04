@@ -21,6 +21,8 @@ public class StylinStrike extends AbstractCasterCard {
         if (amt == 0) {
             dmg(m, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL);
         } else {
+            isMultiDamage = true;
+            calculateCardDamage(null);
             allDmg(AbstractGameAction.AttackEffect.SLASH_HORIZONTAL);
             if (amt >= 3) {
                 allDmg(AbstractGameAction.AttackEffect.SLASH_HORIZONTAL);

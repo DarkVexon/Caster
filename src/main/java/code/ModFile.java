@@ -9,7 +9,6 @@ import code.cards.AbstractCasterCard;
 import code.cards.cardvars.SecondDamage;
 import code.cards.cardvars.SecondMagicNumber;
 import code.cards.cardvars.ThirdMagicNumber;
-import code.patches.EnchantedCardsPatch;
 import code.relics.AbstractCasterRelic;
 import code.ui.AscensionIcon;
 import code.ui.AwesomeIcon;
@@ -22,7 +21,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.mod.stslib.icons.CustomIconHelper;
 import com.evacipated.cardcrawl.modthespire.Loader;
@@ -38,7 +36,6 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import java.nio.charset.StandardCharsets;
 
-import static code.CharacterFile.*;
 import static code.util.Wiz.atb;
 
 @SuppressWarnings({"unused", "WeakerAccess"})
@@ -195,26 +192,6 @@ public class ModFile implements
     }
 
     private static final Color ENCHANT_MAGENTA = new Color(0.8F, 0.0F, 0.5F, 0F);
-
-    @Override
-    public void receiveOnPlayerTurnStartPostDraw() {
-        if (AbstractDungeon.player.chosenClass.equals(CharacterFile.Enums.THE_CASTER)) {
-            atb(new AbstractGameAction() {
-                @Override
-                public void update() {
-                    isDone = true;
-                    AbstractCard tar = AbstractDungeon.player.hand.getRandomCard(AbstractDungeon.cardRandomRng);
-                    EnchantedCardsPatch.enchant(tar);
-                    tar.superFlash(ENCHANT_MAGENTA.cpy());
-                }
-            });
-        }
-    }
-
-    @Override
-    public void receivePostUpdate() {
-        EnchantedCardsPatch.time += Gdx.graphics.getDeltaTime();
-    }
 
     @Override
     public void receivePostInitialize() {
